@@ -13,7 +13,7 @@ export async function signIn(req,res){
     }
 
      if(!process.env.JWT_SECRET){
-        throw new Error("Mongo URL is not defined in env ");
+        throw new Error("Mongo URL is not defined in env");
         
     }
     
