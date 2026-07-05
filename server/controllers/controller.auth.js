@@ -41,15 +41,14 @@ res.status(201).json({msg:"user registered",user:{userName,email},token})
 }
 
 
-export async function login(req,res) {
+
+export async function getMe(req,res) {
     console.log("routee hitttt")
     try {
-        const id = req.id;
-        console.log("id",id,req.id)
+        const id = req.user.id;
+        console.log("id",id)
 
-    const user = await UserDB.findOne({
-        id: id
-    });
+    const user = await UserDB.findById(id);
 
     res.status(200).json({user})
 
