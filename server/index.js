@@ -12,7 +12,6 @@ const port = 6969;
 app.use(express.json());
 
 
-
 connectDB();
 app.listen(port,() => {
     console.log(`http://localhost:${port}/`);
