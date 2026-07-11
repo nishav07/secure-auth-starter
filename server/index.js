@@ -1,6 +1,7 @@
 import express from 'express';
 const app = express();
 import { configDotenv } from 'dotenv';
+import cookieParser from 'cookie-parser';
 
 configDotenv();
 
@@ -17,5 +18,6 @@ app.listen(port,() => {
     console.log(`http://localhost:${port}/`);
 })
 
+app.use(cookieParser());
 app.use("/api/auth",authRouter)
 
